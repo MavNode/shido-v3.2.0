@@ -2,6 +2,15 @@
 
 Automated script for upgrading Shido nodes to v3.1.0.
 
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/MavNode/shido-v3.1.0
+cd shido-v3.1.0
+```
+
 ## Usage
 
 ```bash
