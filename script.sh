@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# Shido Node Upgrade Script for v3.1.0 Upgrade
-# This script automates the node upgrade process for the chain proposal at height 17400000
+# Shido Node Upgrade Script for v3.2.0 Upgrade
+# This script automates the node upgrade process for the chain proposal at height 23500000
 
 set -e  # Exit on any error
 
 echo "============================================"
-echo "    Shido Node Upgrade to v3.1.0 Version"
+echo "    Shido Node Upgrade to v3.2.0 Version"
 echo "============================================"
-echo "Upgrade Height: 17400000"
+echo "Upgrade Height: 23500000"
 echo ""
 
 # Ask user to select Ubuntu version
@@ -21,12 +21,12 @@ read -p "Enter your choice (1 or 2): " choice
 case $choice in
     1)
         UBUNTU_VERSION="20.04"
-        DOWNLOAD_URL="https://github.com/ShidoGlobal/mainnet-enso-upgrade/releases/download/ubuntu20.04/shidod"
+        DOWNLOAD_URL="https://github.com/ShidoGlobal/shido-upgrade-v3.2.0/releases/download/ubuntu20.04/shidod"
         echo "Selected: Ubuntu 20.04"
         ;;
     2)
         UBUNTU_VERSION="22.04/24"
-        DOWNLOAD_URL="https://github.com/ShidoGlobal/mainnet-enso-upgrade/releases/download/ubuntu22.04/shidod"
+        DOWNLOAD_URL="https://github.com/ShidoGlobal/shido-upgrade-v3.2.0/releases/download/ubuntu22.04/shidod"
         echo "Selected: Ubuntu 22.04/24"
         ;;
     *)
@@ -53,7 +53,7 @@ echo "✓ Old binary removed"
 # Step 3: Download the new binary
 echo "Step 3: Downloading new shidod binary for Ubuntu $UBUNTU_VERSION..."
 cd $HOME
-wget $DOWNLOAD_URL -O shidod
+curl -L -o shidod $DOWNLOAD_URL
 echo "✓ Binary downloaded"
 
 # Step 4: Install and set permissions for new binary
@@ -66,7 +66,7 @@ echo "✓ New binary installed with proper permissions"
 echo "Step 5: Verifying new version..."
 echo "New shidod version:"
 /usr/local/bin/shidod version
-echo "Expected output: 3.1.0"
+echo "Expected output: 3.2.0"
 echo "✓ Version verified"
 
 # Step 6: Start the node
