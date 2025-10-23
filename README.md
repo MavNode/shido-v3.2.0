@@ -1,14 +1,14 @@
 # Shido Node Upgrade Script
 
-Automated script for upgrading Shido nodes to v3.1.0.
+Automated script for upgrading Shido nodes to v3.2.0.
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/MavNode/shido-v3.1.0
-cd shido-v3.1.0
+git clone https://github.com/MavNode/shido-v3.2.0
+cd shido-v3.2.0
 ```
 
 ## Usage
